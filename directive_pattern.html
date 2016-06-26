@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>test angular step by step</title>
+		<script src="angular.js"></script>
+		<script>
+			var mymodule=angular.module("mymodule", []);
+			mymodule.controller("x", function($scope)
+			{
+				$scope.initialname = "me";
+				$scope.initialemail = "test@test.com";
+				$scope.age = "55";
+				$scope.pattern = /^\d*$/;
+			});
+		</script>
+	</head>
+	<body ng-app="mymodule">
+		<div ng-controller="x">
+			<form name="form1">
+				<label>name:</label>
+				<input type="text" name="name" ng-model="initialname" required>
+				<span style="color:red" ng-show="form1.name.$error.required">name please</span>
+				<br>
+				<label>email:</label>
+				<input name="email" ng-model="initialemail" type="email" required>
+				<span style="color: red" ng-show="form1.email.$error.email">valid email</span>
+				<br>
+				<label>age:</label>
+				<input name="age" ng-model="age" ng-pattern="pattern">
+				<span style="color: red" ng-show="form1.age.$error.pattern">age must be positive</span>
+				<br>
+			</form>
+		</div>
+	</body>
+</html>

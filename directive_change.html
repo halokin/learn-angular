@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>test angular step by step</title>
+		<script src="angular.js"></script>
+		<script>
+			var mymodule=angular.module("mymodule", []);
+			mymodule.controller("x", function($scope)
+			{
+				$scope.clickCounter = 0;
+				$scope.check=function (){
+					$scope.clickCounter++;
+				}
+			})
+		</script>
+	</head>
+	<body ng-app="mymodule">
+		<div ng-controller="x">
+			<input type="checkbox" ng-model="model" ng-change="check()">
+			<input type="checkbox" ng-model="model">
+			<label>test label</label> <br>
+			checkboxes checked = {{model}} <br>
+			<div>counter = {{clickCounter}}</div>
+		</div>
+	</body>
+</html>

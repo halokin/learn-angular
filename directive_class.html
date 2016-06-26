@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>test angular step by step</title>
+		<script src="angular.js"></script>
+		<style>
+		.changeColor {
+			color: blue;
+		}
+		.changeSize {
+			font-size: 30px;
+		}
+		.italic{
+			font-style: italic;
+		}
+		</style>
+	</head>
+	<body>
+		<div>
+			<p ng-class="style">hello!</p>
+			<br>
+			<input type="text" ng-model="style">
+			<br>
+
+			<p ng-class="{changeColor:a, changeSize:b, italic:c}">hello again!</p>
+			<br>
+			<input type="checkbox" ng-model="a"> Color <br>
+			<input type="checkbox" ng-model="b"> Size <br>
+			<input type="checkbox" ng-model="c"> Italic <br>
+			<br>
+
+		</div>
+	</body>
+</html>

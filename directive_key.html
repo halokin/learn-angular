@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>test angular step by step</title>
+		<script src="angular.js"></script>
+		
+	</head>
+	<body>
+
+	<div>
+		<input type="text" ng-init="x=0" ng-keyup="x=x+1"> {{x}}
+		<br>
+		<input type="text" ng-init="y=0" ng-keydown="y=y+1"> {{y}}
+		<input type="checkbox" ng-model="check">
+		<textarea ng-disabled="check"></textarea>
+
+	</div>
+
+
+	</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>test angular step by step</title>
+		<script src="angular.js"></script>
+		<script>
+			var mymodule=angular.module("mymodule", []);
+			mymodule.controller("x", function($scope)
+			{
+				$scope.initialname = "me";
+				$scope.initialemail = "test@test.com";
+			});
+		</script>
+	</head>
+	<body ng-app="mymodule">
+		<div ng-controller="x">
+			<form name="form1">
+			<label for="">name</label>
+				
+			</form>
+		</div>
+	</body>
+</html>

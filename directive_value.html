@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>test angular step by step</title>
+		<script src="angular.js"></script>
+		<script>
+			var mymodule=angular.module("mymodule", []);
+			mymodule.controller("x", function($scope)
+			{
+				$scope.cars = ['MERCEDES', 'bmw', 'audi'];
+				$scope.my = {favorite: 'audi'};
+			});
+		</script>
+	</head>
+	<body ng-app="mymodule">
+		<div ng-controller="x">
+			<h4 id="favorite_car">which is your favorite?</h4>
+			<label ng-repeat="car in cars">
+				{{car}}
+				<input type="radio" ng-model="my.favorite" ng-value="car">
+			</label>
+			<div>your favorite var is: {{my.favorite}}</div>
+		</div>
+	</div>
+</body>
+</html>

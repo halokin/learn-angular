@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>test angular step by step</title>
+		<script src="angular.js"></script>
+		<script>
+			var mymodule=angular.module("mymodule", []);
+			mymodule.controller("x", function($scope)
+			{
+				$scope.templatePages = [
+				{temp: 'firstPage', url: 'directive_class.html'},
+				{temp: 'secondPage', url: 'directive_key.html'}];
+				$scope.tempPage = $scope.templatePages[0];
+			});
+		</script>
+	</head>
+	<body ng-app="mymodule">
+		<div ng-controller="x">
+		<select ng-model="tempPage" ng-options="p.temp for p in templatePages">
+			<option value="">(Empty)</option>
+		</select>
+		
+			
+		</div>
+	</div>
+</body>
+</html>

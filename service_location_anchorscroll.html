@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>test angular step by step</title>
+		<script src="angular.js"></script>
+		<style>
+		#div {
+			height: 350px;
+			overflow: auto;
+		}
+		#down {
+			display: block;
+			margin-top: 2000px;
+		}
+		</style>
+		<script>
+			var mymodule = angular.module("mymodule", []);
+			mymodule.controller("x", function ($scope, $location, $anchorScroll){
+				$scope.goDown = function () {
+					$location.hash('down');
+					$anchorScroll();
+				}
+				$scope.goUp = function () {
+					$location.hash('up');
+					$anchorScroll();
+				}
+			});
+		</script>
+	</head>
+	<body ng-app="mymodule">
+		<div id="div" ng-controller="x">
+		<div style="color:green;">
+			<a id="up" ng-click="goDown()">go Down</a>
+		</div>
+		<div style="color:red;">
+			<a id="down" ng-click="goUp()">so low</a>
+		</div>
+		</div>
+	</body>
+</html>

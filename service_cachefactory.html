@@ -1,0 +1,38 @@
+	<html ng-app="myapp" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<title></title>
+	<script src="angular.js"></script>
+	<script>
+	var myapp = angular.module("myapp", [])
+	.factory('myCache', function ($cacheFactory) {
+	return $cacheFactory('myCache', { capacity: 3 })
+	});
+	myapp.controller("CacheSampleController",
+	function CacheSampleController($scope, myCache) {
+	$scope.addToCache = function (key, value) {
+	myCache.put(key, value);
+	};
+	$scope.readFromCache = function (key) {
+	return myCache.get(key);
+	};
+	$scope.getCacheStatus = function () {
+	return myCache.info();
+	};
+	});
+	
+	</script>
+	</head>
+	<body>
+	<form id="form1">
+	<div ng-controller="CacheSampleController">
+	Name :(key)<input type="text" ng-model="key" /><br />
+	Color :(value)<input type="text" ng-model="value" /><br />
+	<button type="button" ng-click="addToCache(key,value)">Add To Cache</button>
+	<br /><br />
+	<input type="text" ng-model="keyToRead" /><br />
+	<h3>Value From Cache : {{readFromCache(keyToRead)}}</h3>
+	<h3>Cache Status: {{getCacheStatus()}}</h3>
+	</div>
+	</form>
+	</body>
+	</html>

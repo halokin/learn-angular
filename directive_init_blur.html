@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>test angular step by step</title>
+		<script src="angular.js"></script>
+	</head>
+	<body>
+		<div>
+			<button ng-click="x=x+1" ng-init="x=0">click</button>
+			<br>
+			value of x is {{x}}
+			<br>
+			<input type="text" ng-init="y=0" ng-blur="y=y+1">
+			<input type="text">
+			value of y is {{y}}
+		</div>
+	</body>
+</html>
